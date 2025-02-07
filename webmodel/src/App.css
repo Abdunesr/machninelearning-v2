@@ -1,9 +1,9 @@
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
   margin: 0;
-  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,76 +11,118 @@ body {
 }
 
 .App {
-  background-color: #fff;
-  padding: 21px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
   text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  width: 100%;
 }
 
 h1 {
-  color: #333;
-  margin-bottom: 20px;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Form Styles */
+/* Form Container */
 .form-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.5rem;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.5rem;
 }
 
 label {
-  font-weight: bold;
-  color: #555;
-}
-
-select,
-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-button {
-  padding: 10px;
-  background-color: #007bff;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: #fff;
+}
+
+select, input {
+  padding: 0.8rem;
   border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+select:hover, input:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+select:focus, input:focus {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+select option {
+  background: #1e3c72;
+  color: #fff;
+}
+
+/* Button */
+button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #ff6f61;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background: #ff4a3d;
+  transform: translateY(-2px);
 }
 
-/* Prediction and Error Styles */
+button:active {
+  transform: translateY(0);
+}
+
+/* Prediction and Error Messages */
+.prediction, .error {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .prediction {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #e9f5ff;
-  border-radius: 5px;
-}
-
-.prediction h2 {
-  color: #007bff;
-  margin: 0;
+  background: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
 }
 
 .error {
-  color: #ff0000;
-  font-weight: bold;
-  margin-top: 10px;
+  background: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .App {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  select, input, button {
+    font-size: 0.9rem;
+  }
 }
